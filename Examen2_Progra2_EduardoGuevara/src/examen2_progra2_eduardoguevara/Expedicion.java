@@ -59,16 +59,15 @@ public class Expedicion extends Thread {
         double[] x = nav.tiempo();
         while (vive) {
             try {
-                System.out.println("entro");
                 Thread.sleep((long) (x[0] * 1000));
                 JOptionPane.showMessageDialog(null, "LLego al Planeta");
                 Thread.sleep(1000);
                 JOptionPane.showMessageDialog(null, "Inicia el regreso");
-                Thread.sleep((long) (x[1] * 1000));
+                Thread.sleep((Math.round(x[1]) * 1000));
                 JOptionPane.showMessageDialog(null, "LLego a la Tierra");
                 vive = false;
             } catch (InterruptedException ex) {
-
+                ex.printStackTrace();
             }
         }
     }
